@@ -4,8 +4,8 @@
 
 
 //符号的定义
-#define ROW 3
-#define COL 3
+#define ROW 9
+#define COL 9
 
 //函数的声明
 //初始化棋盘

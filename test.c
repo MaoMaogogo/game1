@@ -19,7 +19,7 @@ void game()
 	//初始化棋盘 - 初始化空格
 	InitBoard(board, ROW, COL);
 	//打印一下棋盘 - 本质是打印数组的内容
-	DisplayBoard(board，ROW，COL);
+	DisplayBoard(board,ROW,COL);
 }
 
 int main()
