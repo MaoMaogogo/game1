@@ -11,7 +11,7 @@ void InitBoard(char board[ROW][COL], int row, int col)
 			board[i][j] = ' ';
 		}
 }
-
+//
 //void DisplayBoard(char board[ROW][COL], int row, int col)
 //{
 //	int i = 0;
