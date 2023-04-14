@@ -26,10 +26,10 @@ void game()
 	while (1)
 	{
 		//玩家下棋
-		PlayerMove(board,ROW,COL);
-		DisplayBoard(board,ROW,COL);
+		PlayerMove(board, ROW, COL);
+		DisplayBoard(board, ROW, COL);
 		//判断玩家是否赢了游戏
-		ret= IsWin(board,ROW,COL);
+		ret = IsWin(board, ROW, COL);
 		if (ret != 'C')
 		{
 			break;
@@ -42,22 +42,19 @@ void game()
 		{
 			break;
 		}
-		if (ret != '*')
-		{
-			printf("玩家赢了\n");
-			DisplayBoard(board, ROW, COL);
-			break;
-		}
-		else if (ret != '#')
-		{
-			printf("电脑赢了\n");
-			DisplayBoard(board, ROW, COL);
-			break;
-		}
-		else
-			printf("平局\n");
 	}
+	if (ret == '*')
+	{
+		printf("玩家赢了\n");	
+	}
+	else if (ret == '#')
+	{
+		printf("电脑赢了\n");
+	}
+	else
+		printf("平局\n");
 }
+
 
 int main()
 {

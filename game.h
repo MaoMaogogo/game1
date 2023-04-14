@@ -26,3 +26,6 @@ void ComputerMove(char board[ROW][COL], int row, int col);
 //2.电脑赢了 -#
 //3.平局     -Q
 //4.游戏继续 -C
+
+//判断游戏是否有输赢状态
+char IsWin(char board[ROW][COL], int row, int col);
