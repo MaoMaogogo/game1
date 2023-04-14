@@ -20,11 +20,49 @@ void game()
 	InitBoard(board, ROW, COL);
 	//打印一下棋盘 - 本质是打印数组的内容
 	DisplayBoard(board,ROW,COL);
+
+	char ret = 0;//接收游戏状态
+
+	while (1)
+	{
+		//玩家下棋
+		PlayerMove(board,ROW,COL);
+		DisplayBoard(board,ROW,COL);
+		//判断玩家是否赢了游戏
+		ret= IsWin(board,ROW,COL);
+		if (ret != 'C')
+		{
+			break;
+		}
+		//电脑下棋
+		ComputerMove(board, ROW, COL);
+		DisplayBoard(board, ROW, COL);
+		//判断玩电脑是否赢了游戏
+		if (ret != 'C')
+		{
+			break;
+		}
+		if (ret != '*')
+		{
+			printf("玩家赢了\n");
+			DisplayBoard(board, ROW, COL);
+			break;
+		}
+		else if (ret != '#')
+		{
+			printf("电脑赢了\n");
+			DisplayBoard(board, ROW, COL);
+			break;
+		}
+		else
+			printf("平局\n");
+	}
 }
 
 int main()
 {
 	int input = 0;
+	srand((unsigned)time(NULL));
 	do
 	{
 		menu();
@@ -39,7 +77,7 @@ int main()
 			printf("退出游戏\n");
 			break;
 		default:
-			printf("请重新选择\m");
+			printf("请重新选择\n");
 			break;
 		}
 	} while(input);
